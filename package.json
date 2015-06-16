@@ -9,6 +9,9 @@
     "morgan": "^1.6.0"
   },
   "devDependencies": {
-    "less": "^2.5.1"
+    "gulp": "^3.9.0",
+    "gulp-less": "^3.0.3",
+    "less": "^2.5.1",
+    "normalize.less": "^1.0.0"
   }
 }
