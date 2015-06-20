@@ -1,12 +1,17 @@
 function drawSquare(onOrOff, color, row, reverse){
 
+  var $littleSquare = $('<div>').attr('class', 'little-square ' + color)
+
   if (onOrOff === 'on'){
     row.push((reverse === true)? 0 : 1);
-    return $('<div>').attr('class', 'little-square').css({'background-color': color})
   } else if (onOrOff === 'off'){
+
     row.push((reverse === true)? 1 : 0);
-    return $('<div>').css({'opacity': '0'}).attr('class', 'little-square')
+    $littleSquare.css({'opacity': '0'});
+
   }
+
+  return $littleSquare;
 
 }
 
@@ -38,5 +43,57 @@ function drawGrid($el, color, reverse){
     lastRow = row; 
   }
   return $el;
+}
+
+function makeDivFoam(){
+
+  drawGrid($('.holds-lil-squares').first(), 'green')
+  drawGrid($($('.holds-lil-squares')[1]), 'magenta', true);
+
+  window.setTimeout(function(){
+    drawGrid($($('.holds-lil-squares')[2]), 'magenta');
+    drawGrid($($('.holds-lil-squares')[3]), 'green', true);
+  }, 1000)
+
+  window.setTimeout(function(){
+    drawGrid($($('.holds-lil-squares')[4]), 'green');
+    drawGrid($($('.holds-lil-squares')[5]), 'gold', true);  
+  }, 2000)
+
+  window.setTimeout(function(){
+    drawGrid($($('.holds-lil-squares')[6]), 'gold');
+    drawGrid($($('.holds-lil-squares')[7]), 'green', true);        
+  }, 3000)
+}
+
+function parralaxing(){
+  $(window).on('scroll', function(){
+
+    var ratio = window.scrollY / window.innerHeight;
+
+    $('.back-panel').children().each(function(){
+      $(this).css({'top': (37 + ratio * 30) + '%'});
+    })
+
+    $('#hartwig').css({'top': (110 + ratio * 30) + '%'})
+    $('#liberale').css({'top': (210 + ratio * 30) + '%'})  
+    $('#iran').css({'top': (300 + ratio * 30) + '%'})  
+  })
 
 }
+
+
+$(function(){
+
+  makeDivFoam();
+
+  parralaxing(); 
+
+})
+
+
+
+
+
+
+

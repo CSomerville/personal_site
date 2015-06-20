@@ -3,29 +3,106 @@
 @my_green: #338D80;
 @my_gold: #CFA611;
 @my_magenta: #DB00B3;
+@my_slate: #363D46;
+
+body {
+  font-family: 'Raleway';
+  color: white;
+}
+
+.container {
+  width: 100%;
+  text-align: center;
+}
+
+nav {
+  .container;
+  list-style: none;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  -webkit-box-shadow: 0 10px 10px 2px @my_green;
+  box-shadow: 0 10px 10px 2px @my_green;
+  li {
+    display: inline-block;
+    font-size: 22px;
+    padding: 1% 2%;
+  }
+}
 
 .holds-lil-squares {
-  opacity: 0;
-  width: 100%;
+  .container;
   height: 33vh;
 }
 
+.buffer {
+  .container;
+  height: 20%;
+}
+
+.little-square {
+  width: 1%;
+  height: 3%;
+  float: left;
+  opacity: 1.0;
+}
+
 .top-n-bottom-container {
-  width: 100%;
+  .container;
   height: 16vh;
 }
 
 .belt-like-container {
-  width: 100%;
-  height: 66vh;
+  .container;
+  height: 60vh;
+}
+
+.bottom-container {
+  .container;
+  height: 30vh;
+}
+
+.name-positioning {
+  position: relative;
+  top: 37%;
 }
 
 .back-panel {
-  width: 100%;
+  .container;
   height: 100vh;
   z-index: -1;
   position: absolute;
   top: 0;
+  h1 {
+    .name-positioning;
+    font-size: 48px;
+    letter-spacing: 7px;
+  }
+  h3 {
+    .name-positioning;
+    font-size: 22px;
+    letter-spacing: 10px;
+  }
+}
+
+.images {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  max-height: 100vh;
+}
+
+#hartwig {
+  .images;
+}
+
+#liberale {
+  .images;
+  z-index: -2;
+}
+
+#iran {
+  .images;
 }
 
 .green {
@@ -38,4 +115,8 @@
 
 .gold {
   background-color: @my_gold;
+}
+
+.slate {
+  background-color: @my_slate;
 }

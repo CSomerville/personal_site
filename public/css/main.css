@@ -353,25 +353,108 @@ td,
 th {
   padding: 0;
 }
-.holds-lil-squares {
-  opacity: 0;
+body {
+  font-family: 'Raleway';
+  color: white;
+}
+.container {
   width: 100%;
+  text-align: center;
+}
+nav {
+  width: 100%;
+  text-align: center;
+  list-style: none;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  -webkit-box-shadow: 0 10px 10px 2px #338d80;
+  box-shadow: 0 10px 10px 2px #338d80;
+}
+nav li {
+  display: inline-block;
+  font-size: 22px;
+  padding: 1% 2%;
+}
+.holds-lil-squares {
+  width: 100%;
+  text-align: center;
   height: 33vh;
+}
+.buffer {
+  width: 100%;
+  text-align: center;
+  height: 20%;
+}
+.little-square {
+  width: 1%;
+  height: 3%;
+  float: left;
+  opacity: 1.0;
 }
 .top-n-bottom-container {
   width: 100%;
+  text-align: center;
   height: 16vh;
 }
 .belt-like-container {
   width: 100%;
-  height: 66vh;
+  text-align: center;
+  height: 60vh;
+}
+.bottom-container {
+  width: 100%;
+  text-align: center;
+  height: 30vh;
+}
+.name-positioning {
+  position: relative;
+  top: 37%;
 }
 .back-panel {
   width: 100%;
+  text-align: center;
   height: 100vh;
   z-index: -1;
   position: absolute;
   top: 0;
+}
+.back-panel h1 {
+  position: relative;
+  top: 37%;
+  font-size: 48px;
+  letter-spacing: 7px;
+}
+.back-panel h3 {
+  position: relative;
+  top: 37%;
+  font-size: 22px;
+  letter-spacing: 10px;
+}
+.images {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  max-height: 100vh;
+}
+#hartwig {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  max-height: 100vh;
+}
+#liberale {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  max-height: 100vh;
+  z-index: -2;
+}
+#iran {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  max-height: 100vh;
 }
 .green {
   background-color: #338d80;
@@ -381,4 +464,7 @@ th {
 }
 .gold {
   background-color: #cfa611;
+}
+.slate {
+  background-color: #363d46;
 }
