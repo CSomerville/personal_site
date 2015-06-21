@@ -376,38 +376,23 @@ nav li {
   font-size: 22px;
   padding: 1% 2%;
 }
-.holds-lil-squares {
-  width: 100%;
-  text-align: center;
-  height: 33vh;
-}
 svg {
   width: 100%;
   height: 33vh;
   vertical-align: top;
+  background-color: rgba(0, 0, 0, 0);
 }
-svg .green {
+.svg-green {
   fill: #338d80;
   stroke: #338d80;
 }
-svg .magenta {
+.svg-magenta {
   fill: #db00b3;
   stroke: #db00b3;
 }
-svg .gold {
+.svg-gold {
   fill: #cfa611;
   stroke: #cfa611;
-}
-.buffer {
-  width: 100%;
-  text-align: center;
-  height: 20%;
-}
-.little-square {
-  width: 1%;
-  height: 3%;
-  float: left;
-  opacity: 1.0;
 }
 .top-n-bottom-container {
   width: 100%;
@@ -423,6 +408,43 @@ svg .gold {
   width: 100%;
   text-align: center;
   height: 30vh;
+}
+.holds-content {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 650px;
+  height: 100%;
+  border-radius: 10px;
+}
+.holds-content p {
+  margin: 0;
+  padding: 10%;
+  font-size: 18px;
+}
+.holds-content h1 {
+  margin: 0;
+  font-size: 36px;
+}
+.skill {
+  font-size: 56px;
+  padding: 2%;
+  display: inline-block;
+  color: #db00b3;
+}
+.skill h4 {
+  font-size: 18px;
+  display: inline-block;
+  padding: 0;
+  vertical-align: top;
+}
+.skill p {
+  color: #cfa611;
+}
+.skill:hover {
+  background-color: #363d46;
+}
+.skill:hover p {
+  color: white;
 }
 .name-positioning {
   position: relative;
@@ -484,4 +506,7 @@ svg .gold {
 }
 .slate {
   background-color: #363d46;
+}
+.magenta-text {
+  color: #db00b3;
 }

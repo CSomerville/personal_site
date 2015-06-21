@@ -1,69 +1,43 @@
-function drawSquare(onOrOff, color, row, reverse){
-
-  var $littleSquare = $('<div>').attr('class', 'little-square ' + color)
-
-  if (onOrOff === 'on'){
-    row.push((reverse === true)? 0 : 1);
-  } else if (onOrOff === 'off'){
-
-    row.push((reverse === true)? 1 : 0);
-    $littleSquare.css({'opacity': '0'});
-
-  }
-
-  return $littleSquare;
-
-}
-
-function drawGrid($el, color, reverse){
+function constructLilSquares($el, reverse){
+  var rects = ''
   var lastRow = [];
   for (var i = 0; i < 100; i++){
     lastRow.push(1);
   }
-  for (var j = 0; j < 50; j++){
+  for (var i = 0; i < 50; i++){
     var row = [];
-    for (var i = 0; i < 100; i++){
+    for (var j = 0; j < 100; j++){
       var rando = Math.floor(Math.random() * 100);
-      if (rando !== 0 && lastRow[i] === 1 && lastRow[i-1] === 1 && lastRow[i+1] === 1){
-        var $div = drawSquare((reverse === true)? 'off' : 'on', color, row, reverse);
+      if (rando !== 0 && lastRow[j] === 1 && lastRow[j-1] === 1 && lastRow[j+1] === 1) {
+        if (!reverse) rects += '<rect x="' + j + '%" y="' + i * 2 + '%" width="1%"" height = "2%"/>';
+        row.push(1);
       } else {
-        if (lastRow[i] !== 1 && lastRow[i-1] !== 1 && lastRow[i+1] !== 1){
-          var $div = drawSquare((reverse === true)? 'on' : 'off', color, row, reverse);
+        if (lastRow[j] !== 1 && lastRow[j-1] !== 1 && lastRow[j+1] !== 1){
+          if (reverse) rects += '<rect x="' + j + '%" y="' + i * 2 + '%" width="1%"" height = "2%"/>';
+          row.push(0);
         } else {
           var rando = Math.floor(Math.random() * 3);
           if (rando === 0){
-            var $div = drawSquare((reverse === true)? 'off' : 'on', color, row, reverse)
+            if (!reverse) rects += '<rect x="' + j + '%" y="' + i * 2 + '%" width="1%"" height = "2%"/>';
+            row.push(1);
           } else {
-            var $div = drawSquare((reverse === true)? 'on' : 'off', color, row, reverse)
-          }
+            if (reverse) rects += '<rect x="' + j + '%" y="' + i * 2 + '%" width="1%"" height = "2%"/>';
+            row.push(0);
+          }          
         }
       }
-      $el.append($div)
     }
-    lastRow = row; 
+    lastRow = row;
   }
-  return $el;
+  $el.html(rects)
 }
 
-function makeDivFoam(){
+function makePixellation(){
 
-  drawGrid($('.holds-lil-squares').first(), 'green')
-  drawGrid($($('.holds-lil-squares')[1]), 'magenta', true);
+  for (var i = 0; i < 8; i++){
+    constructLilSquares($($('.for-little-squares')[i]), (i % 2 !== 0)? true : false)
+  }
 
-  window.setTimeout(function(){
-    drawGrid($($('.holds-lil-squares')[2]), 'magenta');
-    drawGrid($($('.holds-lil-squares')[3]), 'green', true);
-  }, 1000)
-
-  window.setTimeout(function(){
-    drawGrid($($('.holds-lil-squares')[4]), 'green');
-    drawGrid($($('.holds-lil-squares')[5]), 'gold', true);  
-  }, 2000)
-
-  window.setTimeout(function(){
-    drawGrid($($('.holds-lil-squares')[6]), 'gold');
-    drawGrid($($('.holds-lil-squares')[7]), 'green', true);        
-  }, 3000)
 }
 
 function parralaxing(){
@@ -75,6 +49,10 @@ function parralaxing(){
       $(this).css({'top': (37 + ratio * 30) + '%'});
     })
 
+    $('.holds-content').first().css({'opacity': 1 - Math.abs(0.7 - ratio)})
+    $($('.holds-content')[1]).css({'opacity': 1 - Math.abs(3.5 - ratio)})
+
+
     $('#hartwig').css({'top': (110 + ratio * 30) + '%'})
     $('#liberale').css({'top': (210 + ratio * 30) + '%'})  
     $('#iran').css({'top': (300 + ratio * 30) + '%'})  
@@ -84,16 +62,8 @@ function parralaxing(){
 
 
 $(function(){
-
-  makeDivFoam();
-
+  makePixellation();
   parralaxing(); 
-
 })
-
-
-
-
-
 
 
