@@ -375,6 +375,15 @@ nav li {
   display: inline-block;
   font-size: 22px;
   padding: 1% 2%;
+  border-radius: 7px;
+}
+nav li button {
+  background-color: rgba(255, 255, 255, 0);
+  border-style: none;
+  outline: none;
+}
+nav li:hover {
+  background-color: #cfa611;
 }
 svg {
   width: 100%;
@@ -415,15 +424,82 @@ svg {
   max-width: 650px;
   height: 100%;
   border-radius: 10px;
+  text-decoration: none;
 }
 .holds-content p {
   margin: 0;
-  padding: 10%;
+  padding: 5% 10% 5% 10%;
   font-size: 18px;
 }
 .holds-content h1 {
-  margin: 0;
+  margin: 0 0 3% 0;
   font-size: 36px;
+  letter-spacing: 4px;
+}
+.holds-content a {
+  color: white;
+}
+.holds-content a:visited {
+  color: white;
+}
+.holds-content .fa {
+  font-size: 56px;
+  margin: 1% 4%;
+}
+.holds-content #me {
+  max-height: 50%;
+  border-radius: 5px;
+}
+.project-divider {
+  height: 75%;
+  width: 2%;
+  display: inline-block;
+  margin: 0 auto;
+}
+.project {
+  vertical-align: top;
+  margin: 0 auto;
+  display: inline-block;
+  width: 40%;
+  height: 75%;
+  position: relative;
+}
+.project .holds-project-img {
+  height: 70%;
+  width: 100%;
+}
+.project .holds-project-img img {
+  height: 100%;
+  width: 100%;
+}
+.project .holds-project-txt {
+  height: 30%;
+}
+.project .luminous {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: absolute;
+  opacity: 0.1;
+  background: #f4f4f4;
+  /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, #f4f4f4 4%, #000000 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(4%, #f4f4f4), color-stop(100%, #000000));
+  /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover, #f4f4f4 4%, #000000 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, #f4f4f4 4%, #000000 100%);
+  /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, #f4f4f4 4%, #000000 100%);
+  /* IE10+ */
+  background: radial-gradient(ellipse at center, #f4f4f4 4%, #000000 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f4f4f4', endColorstr='#000000', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+}
+.project .luminous:hover {
+  opacity: 0.05;
 }
 .skill {
   font-size: 56px;
@@ -438,7 +514,7 @@ svg {
   vertical-align: top;
 }
 .skill p {
-  color: #cfa611;
+  color: #db00b3;
 }
 .skill:hover {
   background-color: #363d46;
@@ -474,26 +550,26 @@ svg {
   z-index: -1;
   position: absolute;
   width: 100%;
-  max-height: 100vh;
+  height: 100vh;
 }
 #hartwig {
   z-index: -1;
   position: absolute;
   width: 100%;
-  max-height: 100vh;
+  height: 100vh;
 }
 #liberale {
   z-index: -1;
   position: absolute;
   width: 100%;
-  max-height: 100vh;
+  height: 100vh;
   z-index: -2;
 }
 #iran {
   z-index: -1;
   position: absolute;
   width: 100%;
-  max-height: 100vh;
+  height: 100vh;
 }
 .green {
   background-color: #338d80;

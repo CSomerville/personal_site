@@ -27,6 +27,15 @@ nav {
     display: inline-block;
     font-size: 22px;
     padding: 1% 2%;
+    border-radius: 7px;
+    button {
+      background-color: rgba(255, 255, 255, 0);
+      border-style: none;
+      outline: none;
+    }
+  }
+  li:hover {
+    background-color: @my_gold;
   }
 }
 
@@ -73,14 +82,75 @@ svg {
   max-width: 650px;
   height: 100%;
   border-radius: 10px;
+  text-decoration: none;
   p {
     margin: 0;
-    padding: 10%;
+    padding: 5% 10% 5% 10%;
     font-size: 18px;
   }
   h1 {
-    margin: 0;
+    margin: 0 0 3% 0;
     font-size: 36px;
+    letter-spacing: 4px;
+  }
+  a {
+    color: white;
+  }
+  a:visited {
+    color: white;
+  }
+  .fa {
+    font-size: 56px;
+    margin: 1% 4%;
+  }
+  #me {
+    max-height: 50%;
+    border-radius: 5px;
+  }
+}
+
+.project-divider {
+  height: 75%;
+  width: 2%;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.project {
+  vertical-align: top;
+  margin: 0 auto;
+  display: inline-block;
+  width: 40%;
+  height: 75%;
+  position: relative;
+  .holds-project-img {
+    height: 70%;
+    width: 100%;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .holds-project-txt{
+    height: 30%;
+  }
+  .luminous {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    opacity: 0.1;
+    background: rgb(244,244,244); /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, rgba(244,244,244,1) 4%, rgba(0,0,0,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(4%,rgba(244,244,244,1)), color-stop(100%,rgba(0,0,0,1))); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(244,244,244,1) 4%,rgba(0,0,0,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover, rgba(244,244,244,1) 4%,rgba(0,0,0,1) 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover, rgba(244,244,244,1) 4%,rgba(0,0,0,1) 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center, rgba(244,244,244,1) 4%,rgba(0,0,0,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  }
+  .luminous:hover {
+    opacity: 0.05;
   }
 }
 
@@ -96,7 +166,7 @@ svg {
     vertical-align: top;
   }
   p {
-    color: @my_gold;
+    color: @my_magenta;
   }
 }
 
@@ -135,7 +205,7 @@ svg {
   z-index: -1;
   position: absolute;
   width: 100%;
-  max-height: 100vh;
+  height: 100vh;
 }
 
 #hartwig {

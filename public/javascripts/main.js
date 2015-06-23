@@ -1,3 +1,25 @@
+// provides functionality to the nav bar.
+
+function setScroll(navButton, targetDiv){
+  $(navButton).on('click', function(){
+    $('html, body').animate({
+      scrollTop: $(targetDiv).offset().top - window.innerHeight * .3
+    }, 400)
+  })
+}
+
+function navBar() {
+
+  // sets event listeners on each nav button in turn.
+
+  setScroll('#about', '.magenta.belt-like-container');
+  setScroll('#projects', '.green.belt-like-container');
+  setScroll('#skills', '.gold.belt-like-container');
+  setScroll('#contact', '.bottom-container');
+}
+
+// makes the pixel nightmare by building up a series of svg rectangles
+
 function constructLilSquares($el, reverse){
   var rects = ''
   var lastRow = [];
@@ -32,6 +54,8 @@ function constructLilSquares($el, reverse){
   $el.html(rects)
 }
 
+// calls pixel grid function on each of the svg canvases.
+
 function makePixellation(){
 
   for (var i = 0; i < 8; i++){
@@ -50,7 +74,8 @@ function parralaxing(){
     })
 
     $('.holds-content').first().css({'opacity': 1 - Math.abs(0.7 - ratio)})
-    $($('.holds-content')[1]).css({'opacity': 1 - Math.abs(3.5 - ratio)})
+    $($('.holds-content')[1]).find('h1').css({'opacity': 1 - Math.abs(2.16 - ratio)})
+    $($('.holds-content')[2]).css({'opacity': 1 - (2 * Math.abs(3.5 - ratio))})
 
 
     $('#hartwig').css({'top': (110 + ratio * 30) + '%'})
@@ -62,6 +87,7 @@ function parralaxing(){
 
 
 $(function(){
+  navBar();
   makePixellation();
   parralaxing(); 
 })
