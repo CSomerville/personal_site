@@ -51,7 +51,8 @@ function constructLilSquares($el, reverse){
     }
     lastRow = row;
   }
-  $el.html(rects)
+  var classes = $el.attr('class');
+  $el.replaceWith('<svg class="' + classes + '">' + rects + '</svg>')
 }
 
 // calls pixel grid function on each of the svg canvases.
