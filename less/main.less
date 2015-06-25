@@ -109,6 +109,12 @@ svg {
   }
 }
 
+.magenta.belt-like-container {
+  .holds-content {
+    opacity: 0;
+  }
+}
+
 .project-divider {
   height: 75%;
   width: 2%;
@@ -133,6 +139,9 @@ svg {
   }
   .holds-project-txt{
     height: 30%;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
   }
   .luminous {
     height: 100%;
@@ -264,13 +273,19 @@ svg {
     }
   }
   .belt-like-container{
-    height: 600px;
+    height: auto;
   }
   .project {
     max-height: 200px;
   }
   .bottom-container {
     height: 200px;
+  }
+  .magenta.belt-like-container {
+    .holds-content {
+      opacity: 1;
+      height: 600px;
+    }
   }
 
 }

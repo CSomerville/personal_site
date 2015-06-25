@@ -88,7 +88,7 @@ function parralaxing(){
 
 
 $(function(){
-  if (window.screen.width > 500){   
+  if (document.documentElement.clientWidth > 700){   
     navBar();
     makePixellation();
     parralaxing(); 
