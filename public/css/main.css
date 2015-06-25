@@ -587,7 +587,9 @@ svg {
   color: #db00b3;
 }
 @media screen and (max-width: 700px) {
-  .images {
+  #iran,
+  #hartwig,
+  #liberale {
     display: none;
   }
   svg {
@@ -610,5 +612,11 @@ svg {
   }
   .belt-like-container {
     height: 600px;
+  }
+  .project {
+    max-height: 200px;
+  }
+  .bottom-container {
+    height: 200px;
   }
 }
