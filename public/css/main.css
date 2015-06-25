@@ -631,4 +631,7 @@ svg {
     opacity: 1;
     height: 600px;
   }
+  .project {
+    height: 300px;
+  }
 }
