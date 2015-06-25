@@ -240,3 +240,31 @@ svg {
 .magenta-text {
   color: @my_magenta;
 }
+
+@media screen and (max-width: 500px){
+  .images {
+    display: none;
+  }
+  svg {
+    display: none; 
+  }
+  .top-n-bottom-container{
+    display: none;
+  }
+  nav {
+    display: none;
+  }
+  .back-panel {
+    position: static;
+    height: 600px;
+    z-index: 0;
+    display: inline-block;
+    h1 {
+      top: 20%;
+    }
+  }
+  .belt-like-container{
+    height: 600px;
+  }
+
+}
