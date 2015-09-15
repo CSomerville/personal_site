@@ -9,9 +9,8 @@ app.use(morgan('dev'));
 app.use(express.static('public'));
 
 app.get('/', function(req, res){
-  fs.readFile('./index.html', 'utf8', function(err, page){
-    res.send(page)
-  })
+  fs.createReadStream('./index.html')
+    .pipe(res);
 })
 
 app.listen(app.get('port'), function(){
