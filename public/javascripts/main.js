@@ -65,6 +65,16 @@ function makePixellation(){
 
 }
 
+function setBackgroundDivs() {
+    var topForHartwig = $(".magenta.belt-like-container").position().top + $(".magenta.belt-like-container").outerHeight(true)
+    var topForLiberale = $(".green.belt-like-container").position().top + $(".green.belt-like-container").outerHeight(true)
+    var topForIran = $(".gold.belt-like-container").position().top + $(".gold.belt-like-container").outerHeight(true)
+
+    $('#hartwig').css({'top': topForHartwig + 'px'});
+    $('#liberale').css({'top': topForLiberale + 'px'});
+    $('#iran').css({'top': topForIran + 'px'});  
+}
+
 function parralaxing(){
   $(window).on('scroll', function(){
 
@@ -78,19 +88,22 @@ function parralaxing(){
     $($('.holds-content')[1]).find('h1').css({'opacity': 1 - Math.abs(2.16 - ratio)})
     $($('.holds-content')[2]).css({'opacity': 1 - (2 * Math.abs(3.5 - ratio))})
 
-
-    $('#hartwig').css({'top': (110 + ratio * 30) + '%'})
-    $('#liberale').css({'top': (210 + ratio * 30) + '%'})  
-    $('#iran').css({'top': (300 + ratio * 30) + '%'})  
+    $('#hartwig').find('.holds-image').css({'top': (ratio * 30) - 65 + '%'})
+    $('#liberale').find('.holds-image').css({'top': (ratio * 30) - 85 + '%'})  
+    $('#iran').find('.holds-image').css({'top': (ratio * 30) - 140 + '%'})  
   })
 
 }
 
 
 $(function(){
-  if (document.documentElement.clientWidth > 700){   
+  if (document.documentElement.clientWidth > 700){
+    $(window).on('resize', function(){
+      setBackgroundDivs();
+    })  
     navBar();
     makePixellation();
+    setBackgroundDivs();
     parralaxing(); 
   }
 })
