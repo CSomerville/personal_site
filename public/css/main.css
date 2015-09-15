@@ -571,6 +571,7 @@ svg {
   -ms-flex-pack: center;
   justify-content: center;
   position: relative;
+  text-align: center;
 }
 .holds-background .holds-image img {
   object-fit: cover;
